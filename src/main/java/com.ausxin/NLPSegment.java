@@ -8,16 +8,14 @@ import java.nio.file.StandardOpenOption;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
-
 /**
- * User: brucegao
+ * Author: brucegao
  * Date: 2018-11-15
  */
 public class NLPSegment {
     public static void main(String[] args) throws Exception {
 
-        List<String> segLines = Files.readAllLines(Paths.get("data/nlp/cuishou.txt"), UTF_8)
+        List<String> segLines = Files.readAllLines(Paths.get("data/nlp/cuishou.txt"))
                 .parallelStream().map(x -> NLPTokenizer.analyze(x).toStringWithoutLabels()).collect(Collectors.toList());
 
         Files.write(Paths.get("data/word2vec/word2vec_corpus.txt"), segLines, StandardOpenOption.CREATE);

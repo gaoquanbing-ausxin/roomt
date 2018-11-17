@@ -32,9 +32,10 @@ public class SentimentAnalysis {
     public static void main(String[] args) throws IOException {
         IClassifier classifier = new NaiveBayesClassifier(); // 创建分类器，更高级的功能请参考IClassifier的接口定义
         classifier.train(CORPUS_FOLDER);                     // 训练后的模型支持持久化，下次就不必训练了
-        predict(classifier, "前台客房服务态度非常好！早餐很丰富，房价很干净。再接再厉！");
-        predict(classifier, "结果大失所望，灯光昏暗，空间极其狭小，床垫质量恶劣，房间还伴着一股霉味。");
-        predict(classifier, "可利用文本分类实现情感分析，效果还行");
+        //predict(classifier, "前台客房服务态度非常好！早餐很丰富，房价很干净。再接再厉！");
+        //predict(classifier, "结果大失所望，灯光昏暗，空间极其狭小，床垫质量恶劣，房间还伴着一股霉味。");
+        predict(classifier, "用毛巾擦杯子，非常恶心！");
+        predict(classifier, "房间很大");
     }
 
     private static void predict(IClassifier classifier, String text) {
