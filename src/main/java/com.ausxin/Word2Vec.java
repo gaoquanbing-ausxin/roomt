@@ -53,7 +53,6 @@ public class Word2Vec {
         System.out.printf("\n                                                Word     Cosine\n------------------------------------------------------------------------\n");
         for (Map.Entry<String, Float> entry : model.nearest(word)) {
             System.out.printf("%50s\t\t%f\n", entry.getKey(), entry.getValue());
-
         }
     }
 
