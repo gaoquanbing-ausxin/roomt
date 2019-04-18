@@ -58,7 +58,6 @@ public class Word2Vec {
     }
 
     static void printNearestDocument(String document, String[] documents, DocVectorModel model) {
-        System.out.println(document);
         printHeader(document);
         for (Map.Entry<Integer, Float> entry : model.nearest(document)) {
             System.out.printf("%50s\t\t%f\n", documents[entry.getKey()], entry.getValue());
